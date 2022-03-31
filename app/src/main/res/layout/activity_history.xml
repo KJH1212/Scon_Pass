@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".History">
+
+    <ImageButton
+        android:id="@+id/backbutton"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/asktv"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/asktv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이력조회"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="350dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/noticetv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/asktv"
+        app:layout_constraintVertical_bias="0.206" />
+
+
+
+    <TextView
+        android:id="@+id/noticetv"
+        android:layout_width="254dp"
+        android:layout_height="15dp"
+        android:text="※ 이력은 7일이 지나면 자동 삭제됩니다."
+        android:textColor="@color/gray"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/asktv"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <Button
+        android:id="@+id/datebutton"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:background="@drawable/corner_blue"
+        android:text="달력버튼"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noticetv"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <Button
+        android:id="@+id/delbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="전체삭제"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datebutton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/historylist"
+        android:layout_width="370dp"
+        android:layout_height="500dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delbutton"
+        app:layout_constraintVertical_bias="0.0">
+    </ListView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
