@@ -1,2 +1,2 @@
 # Sconpasss
-Sconpasss
+Sconpass
