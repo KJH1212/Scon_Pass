@@ -19,7 +19,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sdfxcvxcv"
+        android:text="sdfxcvxkjkhklhcv"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="128dp"
         tools:ignore="MissingConstraints" />
