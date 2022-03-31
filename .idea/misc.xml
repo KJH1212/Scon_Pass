@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Scon_Pass/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.11" />
-        <entry key="..\:/Users/KSJ/AndroidStudioProjects/Scon_Pass/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/ic_round_arrow_back_ios_24.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/loading.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/setting_border.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/drawable/setting_round_border.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/layout/activity_modifyuser.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/layout/loading.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/jihye/AndroidStudioProjects/Sconpass2/app/src/main/res/layout/setting.xml" value="0.25364583333333335" />
       </map>
