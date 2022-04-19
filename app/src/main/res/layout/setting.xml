@@ -29,7 +29,7 @@
             android:id="@+id/user_image"
             android:layout_width="wrap_content"
             android:layout_height="118dp"
-            android:translationX="100dp"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/setting_person" />
 
         <LinearLayout
@@ -72,39 +72,40 @@
         android:id="@+id/set1"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/setting_round_border"
         android:gravity="center"
         android:text="개인정보 수정"
-        android:textSize="20dp"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:translationY="50dp"
-        android:translationX="30dp"/>
+        android:translationY="50dp" />
+
     <TextView
         android:id="@+id/set2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="가족 출입 알람 설정"
-        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/setting_round_border"
         android:gravity="center"
+        android:text="가족 출입 알람 설정"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:translationY="70dp"
-        android:translationX="30dp"/>
+        android:translationY="70dp" />
 
     <TextView
         android:id="@+id/set3"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="문의"
-        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/setting_round_border"
         android:gravity="center"
+        android:text="문의"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:translationY="90dp"
-        android:translationX="30dp"/>
+        android:translationY="90dp" />
 
     //리스트뷰
     <!--    <ListView-->
