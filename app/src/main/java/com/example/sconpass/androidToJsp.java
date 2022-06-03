@@ -56,7 +56,7 @@ public class androidToJsp  extends AsyncTask<String, String, String> {
             //(8) Request Body에 data를 담음
             outputStreamWriter.write(receiveData);
             //(9) Request Body에 data를 보냄
-            outputStreamWriter.flush();
+            outputStreamWriter.flush();//
             //(10) 출력 스트림을 닫고 모든 시스템 자원을 해제.
             //outputStreamWriter.close();
             Log.d("hello", "나 여기 1");
