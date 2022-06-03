@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sconpass">
+<!--1. manifests에서 외부 JSP사이트와 연결이가능하도록 인터넷 사용을 허가하도록 해줍니다.-->
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sconpass">
+       <activity android:name=".MainActivity"/>
+        <activity android:name=".History"/>
+        <activity android:name=".ModifyuserActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".AdduserActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
