@@ -17,10 +17,10 @@ import java.net.URL;
 
 public class androidToJsp  extends AsyncTask<String, String, String> {
     //에뮬레이터에서는 localhost 말고 다른 주소로 넣어줘야 한다.  localhost가 아니라 10.0.2.2
-    public static String IP ="10.0.2.2:8080"; //자신의 IP번호
+    public static String IP ="10.0.2.2:8083"; //자신의 IP번호
     String SERVER_JSP_IP = "http://"+IP+"/sconpass00/jsp/androidToJsp.jsp"; // 연결할 jsp주소
     String requestProc, receiveData;
-    String resultData="";
+    String msg, resultData="";
 
     androidToJsp(String requestProc){
         this.requestProc = requestProc;
@@ -59,7 +59,7 @@ public class androidToJsp  extends AsyncTask<String, String, String> {
             outputStreamWriter.flush();//
             //(10) 출력 스트림을 닫고 모든 시스템 자원을 해제.
             //outputStreamWriter.close();
-            Log.d("hello", "나 여기 1");
+
             //-------------------2. requestProc에 따른 결과값을 JSP로부터 받아오기 --------------------//
             //Http연결 성공 후 Jsp로부터 Response 가 온다면
             if(conn.getResponseCode() == conn.HTTP_OK){
@@ -72,38 +72,45 @@ public class androidToJsp  extends AsyncTask<String, String, String> {
 
                 StringBuffer stringBuffer = new StringBuffer();
                 //버퍼의 웹문서 소스를 줄 단위로 읽는다(line)
-                String line = bufferedReader.readLine(); //{"jsondata":[{"name":"test","id":"test"}]}
-                Log.d("-1",line);
+                String line = bufferedReader.readLine(); //{"jsondata":[{"phone":"1111","name":"seeun","stay":"상대원동"},{"msg":"success"}]}
+                Log.d("서버로부터 받은 결과값 : ",line);
                 //-------- account_read_response.jsp로부터 json데이터 가져오기 완료!---------//
 
                 //-------- json 데이터 가공 시작! --------//
-                JSONObject jsonObject = new JSONObject(line); //{"jsondata":[{"name":"test","id":"test"}]}
-                JSONArray jsonArray = jsonObject.getJSONArray("jsondata"); //[{"name":"test","id":"test"}]
-                JSONObject jsonDataObj = jsonArray.getJSONObject(0); //{"name":"test","id":"test"}
-
-                if(requestProc == "login"){
-                    resultData =
-                            jsonDataObj.getString("name") + ","
-                            +jsonDataObj.getString("phone") + ","
-                            +jsonDataObj.getString("stay") + ","
-                    ;
-                    Log.d("check Login Data : ", resultData);
-                    //https://hianna.tistory.com/510
-                }
-                else if(requestProc == "join"){
-                    resultData =
-                            jsonDataObj.getString("name") + ","
-                            +jsonDataObj.getString("phone") + ","
-                            +jsonDataObj.getString("stay") + ","
-                            +jsonDataObj.getString("uuid") + ","
-                    ;
-                    Log.d("check Login Data : ", resultData);
-                    //https://hianna.tistory.com/510
+                JSONObject jsonObject = new JSONObject(line); //{"jsondata":[{"phone":"1111","name":"seeun","stay":"상대원동"},{"msg":"success"}]}
+                JSONArray jsonArray = jsonObject.getJSONArray("jsondata"); //[{"phone":"1111","name":"seeun","stay":"상대원동"},{"msg":"success"}]
+                JSONObject jsonDataObj = jsonArray.getJSONObject(0); //{"phone":"1111","name":"seeun","stay":"상대원동"}
+                msg = jsonDataObj.getString("msg");
+                switch (msg){
+                    case "READ SUCCESS":
+                        resultData =
+                                jsonDataObj.getString("name") + ","
+                                        +jsonDataObj.getString("phone") + ","
+                                        +jsonDataObj.getString("stay")
+                        ;
+                        Log.d("check Login Data", resultData);
+                        //https://hianna.tistory.com/510
+                        break;
+                    case "CREATE SUCCESS":
+                        resultData =
+                                msg +" : "+jsonDataObj.getString("uuid")
+                        ;
+                        Log.d("check Join Data : ", resultData);
+                        //https://hianna.tistory.com/510
+                        break;
+                    case "READ FAILED":
+                        Log.d("check Login Data", msg);
+                        resultData = msg;
+                        break;
+                    case "CREATE FAILED":
+                        Log.d("check Join Data", msg);
+                        resultData = msg;
+                        break;
                 }
 
                 //--------------------- AndroidToJsp -> MainActivity -----------------------
 
-                Log.d("jsp>AndroidToJsp", resultData+"");
+                Log.d("jsp>AndroidToJsp", "result data "+resultData);
 
             }else{
                 Log.d("HTTP 연결 결과 : ", "HTTP 연결 실패");
